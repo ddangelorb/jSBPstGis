@@ -7,7 +7,7 @@ Spring Boot Data JPA project using PostgreSQL and the spatial database extender 
 This project was initially created using the [spring initializr](https://start.spring.io/), together with the following dependencies:
 
 - [Lombok](https://projectlombok.org/). Java annotation library which helps to reduce boilerplate code.
-- Spring Web. Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+- [Spring Web](https://spring.io/guides/gs/serving-web-content/). Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
 -
 
 # How to setup this project
