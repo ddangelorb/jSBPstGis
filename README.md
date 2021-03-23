@@ -22,9 +22,15 @@ This project was initially created using the [spring initializr](https://start.s
 
 # How to setup this project
 
-Once the dependencies are properly installed, start the PostgreSQL and run the scripts to create the database and get the load data.
+Once the dependencies are properly installed, follow the steps below:
 
-    $ postgres -D /usr/local/var/postgres
+- Start the PostgreSQL and run the scripts to create the database and get the load data.
+
+  $ postgres -D /usr/local/var/postgres
+
+- Start the Spring Web Service
+
+  $ start ....
 
 ## License
 
