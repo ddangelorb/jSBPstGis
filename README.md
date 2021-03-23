@@ -2,14 +2,6 @@
 
 Spring Boot Data JPA project using PostgreSQL and the spatial database extender PostGIS.
 
-# Dependencies
-
-- [Maven Project](https://maven.apache.org/)
-- [Java 16](http://openjdk.java.net/projects/jdk/16/)
-- [Spring Boot 2.4.4](https://spring.io/projects/spring-boot/)
-- [PostgreSQ](https://www.postgresql.org/)
-- [PostGIS](https://postgis.net/)
-
 ## How this project was created
 
 This project was initially created using the [spring initializr](https://start.spring.io/), together with the following dependencies:
@@ -20,13 +12,22 @@ This project was initially created using the [spring initializr](https://start.s
 - [PostgreSQL Driver](https://jdbc.postgresql.org/). A JDBC and R2DBC driver that allows Java programs to connect to a PostgreSQL database using standard, database independent Java code.
 - [Spring Security](https://spring.io/projects/spring-security). Highly customizable authentication and access-control framework for Spring applications.
 
+# Dependencies
+
+- [Maven Project](https://maven.apache.org/)
+- [Java 16](http://openjdk.java.net/projects/jdk/16/)
+- [Spring Boot 2.4.4](https://spring.io/projects/spring-boot/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [PostGIS](https://postgis.net/)
+
 # How to setup this project
 
-This project also uses [PostGIS](https://postgis.net/), a spatial database extender for PostgreSQL object-relational database.
+Once the dependencies are properly installed, start the PostgreSQL and run the scripts to create the database and get the load data.
+$ postgres -D /usr/local/var/postgres
 
 ## License
 
-MIT [license](https://github.com/ddangelorb/gthbmining/blob/master/LICENSE)
+MIT [license](https://github.com/ddangelorb/jSBPstGis/blob/main/LICENSE)
 
 ## Author
 
