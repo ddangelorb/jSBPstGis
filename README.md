@@ -24,6 +24,13 @@ This project was initially created using the [spring initializr](https://start.s
 
 Once the dependencies are properly installed, follow the steps below:
 
+- Clone the project locally
+
+```console
+    $ git clone https://github.com/ddangelorb/jSBPstGis.git
+    $ cd jSBPstGis
+```
+
 - Start the PostgreSQL and run the scripts to create the database and get the load data.
 
 ```console
@@ -32,6 +39,7 @@ Once the dependencies are properly installed, follow the steps below:
   postgres=# CREATE DATABASE jsbpstgis;
   postgres=# \l
   postgres=# \c jsbpstgis
+  jsbpstgis=# \i db/ddl.sql
   jsbpstgis=#
   jsbpstgis=# \q
 ```
