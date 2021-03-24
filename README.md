@@ -17,7 +17,7 @@ This project was initially created using the [spring initializr](https://start.s
 - [Maven Project](https://maven.apache.org/)
 - [Java 16](http://openjdk.java.net/projects/jdk/16/)
 - [Spring Boot 2.4.4](https://spring.io/projects/spring-boot/)
-- [PostgreSQL](https://www.postgresql.org/)
+- [PostgreSQL](https://www.postgresql.org/). {Homebrew preferably}
 - [PostGIS](https://postgis.net/)
 
 # How to setup this project
@@ -26,7 +26,13 @@ Once the dependencies are properly installed, follow the steps below:
 
 - Start the PostgreSQL and run the scripts to create the database and get the load data.
 
-  $ postgres -D /usr/local/var/postgres
+  $ brew services start postgresql
+  $ psql postgres
+  postgres=# CREATE DATABASE jsbpstgis;
+  postgres=# \l
+  postgres=# \c jsbpstgis
+  jsbpstgis=#
+  jsbpstgis=# \q
 
 - Start the Spring Web Service
 
