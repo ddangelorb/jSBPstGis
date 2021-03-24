@@ -26,6 +26,7 @@ Once the dependencies are properly installed, follow the steps below:
 
 - Start the PostgreSQL and run the scripts to create the database and get the load data.
 
+```console
   $ brew services start postgresql
   $ psql postgres
   postgres=# CREATE DATABASE jsbpstgis;
@@ -33,6 +34,7 @@ Once the dependencies are properly installed, follow the steps below:
   postgres=# \c jsbpstgis
   jsbpstgis=#
   jsbpstgis=# \q
+```
 
 - Start the Spring Web Service
 
