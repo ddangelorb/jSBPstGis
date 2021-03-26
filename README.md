@@ -17,7 +17,7 @@ This project was initially created using the [spring initializr](https://start.s
 - [Maven Project](https://maven.apache.org/)
 - [Java 16](http://openjdk.java.net/projects/jdk/16/)
 - [Spring Boot 2.4.4](https://spring.io/projects/spring-boot/)
-- [PostgreSQL](https://www.postgresql.org/). {Homebrew preferably}
+- [PostgreSQL](https://www.postgresql.org/) via [Homebrew preferably](https://formulae.brew.sh/formula/postgresql)
 - [PostGIS](https://postgis.net/)
 
 # How to setup this project
