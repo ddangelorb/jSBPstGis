@@ -40,6 +40,7 @@ Once the dependencies are properly installed, follow the steps below:
   postgres=# \l
   postgres=# \c jsbpstgis
   jsbpstgis=# \i db/ddl.sql
+  jsbpstgis=# \i db/forms_config.sql
   jsbpstgis=#
   jsbpstgis=# \q
 ```

@@ -17,16 +17,6 @@ public class FieldsAnswersService {
 	  private FieldsService fieldsService;
 
 	  
-	  //??? do we need that? addAll should be enough
-	  public void add(FieldsAnswers fieldsAnswers) {
-		  if (isValid(fieldsAnswers)) {
-			  fieldsAnswersRepository.save(fieldsAnswers);
-		  }
-		  else {
-			  //REST API Error here
-		  }
-	  }
-	  
 	  public void addAll(String formcode, List<FieldsAnswers> listFieldsAnswers) {
 		  //check if all fields belong to the form
 		  List<Fields> formFields = fieldsService.findAllByFormCode(formcode);

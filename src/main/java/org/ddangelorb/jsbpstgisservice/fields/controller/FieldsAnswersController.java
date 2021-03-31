@@ -20,9 +20,11 @@ public class FieldsAnswersController {
 	 private FieldsAnswersService fieldsAnswersService;
 	
 	@PostMapping
-	public ResponseEntity<Void> add(FieldsAnswersDTO dto) {
-		fieldsAnswersService.add(dto.transformToObject());
-		return new ResponseEntity<Void>(HttpStatus.OK); 
+	public ResponseEntity<Void> add(String formcode,FieldsAnswersDTO dto) {
+		List<FieldsAnswers> listFieldsAnswers = new ArrayList<FieldsAnswers>();
+		listFieldsAnswers.add(dto.transformToObject());
+		fieldsAnswersService.addAll(formcode, listFieldsAnswers);
+		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 	
 	@PostMapping
