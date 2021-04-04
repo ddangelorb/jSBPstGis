@@ -36,11 +36,15 @@ Once the dependencies are properly installed, follow the steps below:
 ```console
   $ brew services start postgresql
   $ psql postgres
+  postgres=# \conninfo
   postgres=# CREATE DATABASE jsbpstgis;
   postgres=# \l
   postgres=# \c jsbpstgis
   jsbpstgis=# \i db/ddl.sql
   jsbpstgis=# \i db/forms_config.sql
+  jsbpstgis=# create user ujsbpstgis;
+  jsbpstgis=# alter user ujsbpstgis with encrypted password '<your really secure password>';
+  jsbpstgis=# grant all privileges on database jsbpstgis to ujsbpstgis;
   jsbpstgis=#
   jsbpstgis=# \q
 ```
