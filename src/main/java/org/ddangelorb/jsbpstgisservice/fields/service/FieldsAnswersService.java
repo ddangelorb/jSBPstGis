@@ -19,7 +19,7 @@ public class FieldsAnswersService {
 	  
 	  public void addAll(String formcode, List<FieldsAnswers> listFieldsAnswers) {
 		  //check if all fields belong to the form
-		  List<Fields> formFields = fieldsService.findAllByFormCode(formcode);
+		  Iterable<Fields> formFields = fieldsService.findAllByFormCode(formcode);
 		  //check here if the formFields match with listFieldsAnswers
 		  //https://www.tutorialspoint.com/how-to-compare-two-arrays-in-java
 		  
@@ -35,6 +35,11 @@ public class FieldsAnswersService {
 	  
 	  public FieldsAnswers findById(Integer id) {
 		  return fieldsAnswersRepository.findById(id).orElse(null);
+	  }
+	  
+	  public Iterable<FieldsAnswers> findAllByUserInformer(Integer idUserInformer) {
+		  //TODO: validate idUserInformer here ...
+		  return fieldsAnswersRepository.findAllByUserInformer(idUserInformer);
 	  }
 	  
 	  private boolean isValid(FieldsAnswers fieldsAnswers) {

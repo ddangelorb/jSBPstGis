@@ -9,6 +9,7 @@ import org.ddangelorb.jsbpstgisservice.fields.service.FieldsAnswersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,5 +37,10 @@ public class FieldsAnswersController {
 		
 		fieldsAnswersService.addAll(formcode, listFieldsAnswers);
 		return new ResponseEntity<Void>(HttpStatus.OK);
+	}
+	
+	@GetMapping
+	public ResponseEntity<Iterable<FieldsAnswers>> findAllByUserInformer(Integer idUserInformer) {
+		return ResponseEntity.ok(fieldsAnswersService.findAllByUserInformer(idUserInformer));
 	}
 }

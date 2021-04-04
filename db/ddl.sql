@@ -52,6 +52,7 @@ CREATE TABLE IF NOT EXISTS Forms
 (
     Id SERIAL PRIMARY KEY,
     IdFormsOrigins INT NOT NULL,
+    Code VARCHAR(50) UNIQUE NOT NULL,
     Name VARCHAR(100) NOT NULL,
     Description VARCHAR(100) NOT NULL,
     DtCreation TIMESTAMP NOT NULL DEFAULT NOW(),
@@ -111,22 +112,14 @@ CREATE TABLE IF NOT EXISTS FieldsAnswers
 (
     Id SERIAL PRIMARY KEY,
     IdFields INT NOT NULL,
+    IdUsersInformer INT NOT NULL,
     Value VARCHAR(100) NOT NULL,
     DtFilling TIMESTAMP NOT NULL,
-    Active INT NOT NULL,
-    FOREIGN KEY (IdFields) REFERENCES Fields (Id)
-);
-
-CREATE TABLE IF NOT EXISTS UsersInformerFieldsAnswers
-(
-    Id SERIAL PRIMARY KEY,
-    IdUsersInformer INT NOT NULL,
-    IdFieldsAnswers INT NOT NULL,
     Latitude NUMERIC NULL,
     Longitude NUMERIC NULL,
     Active INT NOT NULL,
-    FOREIGN KEY (IdUsersInformer) REFERENCES Users (Id),
-    FOREIGN KEY (IdFieldsAnswers) REFERENCES FieldsAnswers (Id)
+    FOREIGN KEY (IdFields) REFERENCES Fields (Id),
+    FOREIGN KEY (IdUsersInformer) REFERENCES Users (Id)
 );
 
 CREATE TABLE IF NOT EXISTS UsersEndorsementFieldsAnswers
