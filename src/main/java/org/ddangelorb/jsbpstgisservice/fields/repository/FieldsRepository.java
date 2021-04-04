@@ -6,6 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 public interface FieldsRepository extends CrudRepository<Fields, Integer> {
-    @Query("SELECT f FROM Fields f INNER JOIN FormFields ff on f.Id = ff.IdFields INNER JOIN Forms fo ON ff.IdForms = fo.Id WHERE fo.Code LIKE %?1")
+    @Query(value = "SELECT f FROM Fields f INNER JOIN FormFields ff on f.Id = ff.IdFields INNER JOIN Forms fo ON ff.IdForms = fo.Id WHERE fo.Code LIKE %?1", nativeQuery = true)
     Iterable<Fields> findAllByFormCode(String formcode);
 }

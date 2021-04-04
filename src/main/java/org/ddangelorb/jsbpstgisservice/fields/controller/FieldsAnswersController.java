@@ -20,13 +20,13 @@ public class FieldsAnswersController {
 	@Autowired 
 	 private FieldsAnswersService fieldsAnswersService;
 	
-	@PostMapping
+	/*@PostMapping
 	public ResponseEntity<Void> add(String formcode,FieldsAnswersDTO dto) {
 		List<FieldsAnswers> listFieldsAnswers = new ArrayList<FieldsAnswers>();
 		listFieldsAnswers.add(dto.transformToObject());
 		fieldsAnswersService.addAll(formcode, listFieldsAnswers);
 		return new ResponseEntity<Void>(HttpStatus.OK);
-	}
+	}*/
 	
 	@PostMapping
 	public ResponseEntity<Void> addAll(String formcode, List<FieldsAnswersDTO> listDTO) {

@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 public interface FieldsAnswersRepository extends CrudRepository<FieldsAnswers, Integer> {
-    @Query("SELECT f FROM FieldsAnswers f WHERE f.IdUsersInformer = ?1")
+    @Query(value = "SELECT f FROM FieldsAnswers f WHERE f.IdUsersInformer = ?1", nativeQuery = true)
     Iterable<FieldsAnswers> findAllByUserInformer(Integer idUserInformer);
 }
