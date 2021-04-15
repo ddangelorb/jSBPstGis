@@ -34,9 +34,17 @@ Once the dependencies are properly installed, follow the steps below:
 - Start the PostgreSQL and run the scripts to create the database and get the load data.
 
 ```console
+  $ shp2pgsql -s 4326 -I shapefile/Administrative_Limit_SP.shp > db/Administrative_Limit_SP.sql
+  $ shp2pgsql -s 4326 -I shapefile/Vegetation_SP_WSG84.shp > db/Vegetation_SP_WSG84.sql
   $ brew services start postgresql
   $ psql postgres
   postgres=# \conninfo
+  postgres=# CREATE DATABASE geocoder;
+  postgres=# \c geocoder;
+  geocoder=# CREATE EXTENSION postgis;
+  geocoder=# \i db/Administrative_Limit_SP.sql 
+  geocoder=# \i db/Vegetation_SP_WSG84.sql
+  geocoder=# \c postgres  
   postgres=# CREATE DATABASE jsbpstgis;
   postgres=# \l
   postgres=# \c jsbpstgis
