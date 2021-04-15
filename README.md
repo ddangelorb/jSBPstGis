@@ -18,7 +18,7 @@ This project was initially created using the [spring initializr](https://start.s
 - [Java 16](http://openjdk.java.net/projects/jdk/16/)
 - [Spring Boot 2.4.4](https://spring.io/projects/spring-boot/)
 - [PostgreSQL](https://www.postgresql.org/) via [Homebrew preferably](https://formulae.brew.sh/formula/postgresql)
-- [PostGIS](https://postgis.net/)
+- [PostGIS](https://postgis.net/)  via [Homebrew preferably](https://formulae.brew.sh/formula/postgis)
 
 # How to setup this project
 
@@ -52,6 +52,8 @@ Once the dependencies are properly installed, follow the steps below:
 - Start the Spring Web Service
 
   $ start ....
+  $ http://localhost:8080/swagger-ui.html
+  $ http://localhost:8080/v2/api-docs
 
 ## License
 
