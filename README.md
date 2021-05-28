@@ -46,6 +46,7 @@ Once the dependencies are properly installed, follow the steps below:
   jsbpstgis=# \i db/sys_config.sql
   jsbpstgis=# \i db/Administrative_Limit_SP.sql 
   jsbpstgis=# \i db/Vegetation_SP_WSG84.sql
+  jsbpstgis=# \i db/FieldsAnswers-FROM-Vegetation_SP_WSG84.sql
   jsbpstgis=# create user ujsbpstgis;
   jsbpstgis=# alter user ujsbpstgis with encrypted password '<your really secure password>';
   jsbpstgis=# grant all privileges on database jsbpstgis to ujsbpstgis;

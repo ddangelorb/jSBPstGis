@@ -5,9 +5,9 @@ idfieldsinserted  bigint;
 BEGIN
     INSERT INTO users(email, firstname, surname, active) VALUES ('admin@wpd.com', 'admin', 'wpd', 1);
 
-    INSERT INTO formsOrigins(id, name, active) VALUES (DEFAULT, 'WP6.MobileApp', 1);
-    INSERT INTO formsOrigins(id, name, active) VALUES (DEFAULT, 'Livia', 1);
-
+    INSERT INTO formsorigins(id, name, active) VALUES (DEFAULT, 'OFICIAL', 1);
+    INSERT INTO formsorigins(id, name, active) VALUES (DEFAULT, 'WP6.MobileApp', 1);
+    
     INSERT INTO fieldsdatatypes(id, name, description, active) VALUES (DEFAULT, 'integer', 'data type integer', 1);
     INSERT INTO fieldsdatatypes(id, name, description, active) VALUES (DEFAULT, 'text', 'data type text', 1);
     INSERT INTO fieldsdatatypes(id, name, description, active) VALUES (DEFAULT, 'real', 'data type real', 1);
@@ -15,8 +15,8 @@ BEGIN
     INSERT INTO fieldsdatatypes(id, name, description, active) VALUES (DEFAULT, 'geom', 'data type geometric', 1);
 
     --Shape file Vegetation_SP_WSG84
-    INSERT INTO forms(idformsOrigins, code, name, description, dtcreation, active) 
-            SELECT fo.id, 'Vegetation_SP_WSG84', 'Vegetation_SP_WSG84 sh file', 'Vegetation_SP_WSG84 shape file', current_timestamp, 1 FROM formsOrigins fo WHERE fo.name = 'Livia' 
+    INSERT INTO forms(idformsorigins, code, name, description, dtcreation, active) 
+            SELECT fo.id, 'vegetation_sp_wsg84', 'Vegetation_SP_WSG84 sh file', 'Vegetation_SP_WSG84 shape file', current_timestamp, 1 FROM formsorigins fo WHERE fo.name = 'OFICIAL' 
             RETURNING id INTO idformsinserted;
 
     INSERT INTO fields(idfieldsdatatypes, name, description, fillingclue, active)
@@ -72,8 +72,8 @@ BEGIN
 
 
     --FloodZones Form
-    INSERT INTO forms(idformsOrigins, code, name, description, dtcreation, active) 
-            SELECT fo.id, 'FLOODZONES-FORM', 'FloodZones', 'FloodZones Form', current_timestamp, 1 FROM formsOrigins fo WHERE fo.name = 'WP6.MobileApp' 
+    INSERT INTO forms(idformsorigins, code, name, description, dtcreation, active) 
+            SELECT fo.id, 'FLOODZONES-FORM', 'FloodZones', 'FloodZones Form', current_timestamp, 1 FROM formsorigins fo WHERE fo.name = 'WP6.MobileApp' 
             RETURNING id INTO idformsinserted;
 
     INSERT INTO fields(idfieldsdatatypes, name, description, fillingclue, active)
@@ -128,4 +128,4 @@ END $$;
 --delete from fields;
 --delete from forms;
 --delete from fieldsdatatypes;
---delete from formsOrigins;
+--delete from formsorigins;

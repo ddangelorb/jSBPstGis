@@ -125,7 +125,7 @@ CREATE TABLE IF NOT EXISTS fieldsanswers
     id SERIAL PRIMARY KEY,
     idfields INT NOT NULL,
     idformsanswers INT NOT NULL,
-    value VARCHAR(100) NOT NULL,
+    value VARCHAR(100) NULL,
     FOREIGN KEY (idfields) REFERENCES fields (id),
     FOREIGN KEY (idformsanswers) REFERENCES formsanswers (id)
 );
