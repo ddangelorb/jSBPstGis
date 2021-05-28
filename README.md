@@ -39,17 +39,13 @@ Once the dependencies are properly installed, follow the steps below:
   $ brew services start postgresql
   $ psql postgres
   postgres=# \conninfo
-  postgres=# CREATE DATABASE geocoder;
-  postgres=# \c geocoder;
-  geocoder=# CREATE EXTENSION postgis;
-  geocoder=# \i db/Administrative_Limit_SP.sql 
-  geocoder=# \i db/Vegetation_SP_WSG84.sql
-  geocoder=# \c postgres  
   postgres=# CREATE DATABASE jsbpstgis;
-  postgres=# \l
   postgres=# \c jsbpstgis
+  jsbpstgis=# CREATE EXTENSION postgis;
   jsbpstgis=# \i db/ddl.sql
-  jsbpstgis=# \i db/forms_config.sql
+  jsbpstgis=# \i db/sys_config.sql
+  jsbpstgis=# \i db/Administrative_Limit_SP.sql 
+  jsbpstgis=# \i db/Vegetation_SP_WSG84.sql
   jsbpstgis=# create user ujsbpstgis;
   jsbpstgis=# alter user ujsbpstgis with encrypted password '<your really secure password>';
   jsbpstgis=# grant all privileges on database jsbpstgis to ujsbpstgis;
