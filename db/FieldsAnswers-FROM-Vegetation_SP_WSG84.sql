@@ -21,8 +21,8 @@ BEGIN
 
     OPEN curr;
     LOOP
-    FETCH curr INTO curr_row;
-        EXIT WHEN curr_row = null;
+        FETCH FROM curr INTO curr_row;
+        EXIT WHEN NOT FOUND;
 
         --insert new formsAnswers
         INSERT INTO formsanswers(idforms, idusersinformer, dtfilling)
