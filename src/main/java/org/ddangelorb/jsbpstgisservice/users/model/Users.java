@@ -21,6 +21,10 @@ public class Users {
 	private String avatar;
 	private Integer active;
 	
+	public Users(String email) {
+		this.email = email;
+	}
+	
 	public Users(String email, String firstname, String surname, String avatar, Integer active) {
 		this.email = email;
 		this.firstname = firstname;
